@@ -1,0 +1,15 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "firstName": "Manuel",
+      "lastName": "Nunziata",
+      "email": "nunziatamanuel5@gmail.com",
+      "password": "Manuel",
+      "username": "manuel",
+      "image": "assets/img/profile.jpg"
+    }
+  ],
+  "libri": []
+}
+

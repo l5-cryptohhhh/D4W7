@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La mia libreria</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-brand">
+        <h1>La mia libreria</h1>
+        <p>Cerca su Open Library, accedi al tuo profilo, salva i preferiti.</p>
+      </div>
+
+      <!-- stato NON loggato -->
+      <div id="header-login" class="header-login">
+        <input type="email"    id="login-username" placeholder="email" autocomplete="email">
+        <input type="password" id="login-password" placeholder="••••••••••" autocomplete="current-password">
+        <button id="btn-login" class="btn-accedi">Accedi</button>
+        <span id="login-errore" class="login-errore-inline"></span>
+      </div>
+
+      <!-- stato LOGGATO -->
+      <div id="header-utente" class="header-utente" style="display:none;">
+        <span id="benvenuto-utente" class="benvenuto"></span>
+        <button id="btn-logout" class="btn-esci">Esci</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- SEZIONE PROFILO (visibile solo da loggati) -->
+    <section id="sezione-profilo" class="form-section" style="display:none;">
+      <h2>Il tuo profilo</h2>
+      <div class="profilo-card">
+        <div id="profilo-avatar" class="profilo-avatar"></div>
+        <div class="profilo-info">
+          <div id="profilo-nome" class="profilo-nome"></div>
+          <div id="profilo-meta" class="profilo-meta"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RICERCA -->
+    <section class="form-section">
+      <h2>Cerca</h2>
+      <div class="cerca-row">
+        <label for="cerca">Titolo o autore</label>
+        <input type="text" id="cerca" placeholder="es. harari, tolkien, sapiens…" autocomplete="off">
+      </div>
+      <div id="stato-ricerca" aria-live="polite"></div>
+      <ul id="risultati" class="risultati"></ul>
+    </section>
+
+    <!-- LIBRERIA PERSONALE -->
+    <section class="lista-section">
+      <div class="lista-header">
+        <h2 id="titolo-lista">I tuoi libri (0)</h2>
+        <div class="lista-azioni">
+          <button id="btn-esporta" style="display:none;">Esporta JSON</button>
+          <button id="svuota-tutto" class="btn-svuota">Svuota tutto</button>
+        </div>
+      </div>
+      <p class="info-storage">I libri salvati restano nel browser fra le sessioni.</p>
+      <ul id="lista-libri"></ul>
+    </section>
+
+  </main>
+
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
